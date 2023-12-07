@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <script src="https://kit.fontawesome.com/0a5ca644e4.js" crossorigin="anonymous"></script>
+    <style>
+    .box{
+        padding-top: 10vh;
+    }
+    </style>
+</head>
+<center><body>
+    <main class="box">
+        <div class="form">
+	<h1>Register</h1>
+        <form onsubmit="return validateForm()" action="index.html">
+            <div class="username"><i class="fa-solid fa-user"></i>
+			<input type="text" placeholder="Your Name" required></div>
+            <div class="username" ><i class="fa-regular fa-user"></i>
+            <input type="text" placeholder="User Name" id="t1"  required></div>
+            <div class="username"><i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email" id="t2" required ></div>
+                <div class="username"><i class="fa-solid fa-phone"></i>
+                    <input type="text" placeholder="Mobile No." id="t3" required ></div>
+            <div class="password"><i class="fa-solid fa-lock"></i>
+		<input type="password" placeholder="Password" id="t4" required ></div>
+        <div class="password"><i class="fa-solid fa-lock"></i> 
+            <input type="password" placeholder="Confirm Password" id="t5" required ></div>
+	<div class="bt">
+	<div class="btn">
+    <input type="submit" value="Register"></input></div>	
+	</div>
+        </form>
+        </div>
+        <script>
+            function validateForm() {
+                const username = document.getElementById("t1").value;
+                const phone = document.getElementById("t3").value;
+                const password = document.getElementById("t4").value;
+                const confirmPassword = document.getElementById("t5").value;
+    
+                const usernamePattern = /^[A-Za-z]+\d+$/;
+                const phonePattern = /^\d{10}$/;
+                const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    
+                if (!usernamePattern.test(username)) {
+                    alert("Username must contain letters and ends with numbers");
+                    return false;
+                } else if (!phonePattern.test(phone)) {
+                    alert("Phone number must be 10 digits");
+                    return false;
+                } else if (!passwordPattern.test(password)) {
+                    alert("Password must be at least 8 characters and include at least one letter and one digit");
+                    return false;
+                } else if (password !== confirmPassword) {
+                    alert("Password and Confirm Password should be the same");
+                    return false;
+                } 
+    
+                return true;
+            }
+        </script>
+</body></center>
+</html>

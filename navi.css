@@ -1,0 +1,50 @@
+
+body,a,h1,p {font-family: "Amatic SC", sans-serif}
+* {box-sizing: border-box;}
+
+.bg-img {
+  min-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+
+  position: relative;
+}
+
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.container .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
